@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import Footer from "./footer";
 import Navbar from "./shared/navbar";
 
-export default function Home({ title }) {
+export default function Home({ data }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -25,8 +25,17 @@ export default function Home({ title }) {
       </header>
 
       <main className={styles.main}>
+        {data.map((ev) => (
+          <div key={ev.id}>
+            <Link href={`/events/${ev.id}`}>
+              <Image src={ev.image} alt={ev.title} width={200} height={100} />
+              <h2 className="text-3xl font-bold">{ev.title}</h2>
+              <p>{ev.description}</p>
+            </Link>
+          </div>
+        ))}
         {/* <h1 className="text-3xl font-bold underline">Hello world!</h1> */}
-        <Link href="/events/london">
+        {/* <Link href="/events/london">
           <img src="" alt="" />
           <h2 className="text-3xl font-bold">Events in London</h2>
           <p>
@@ -55,7 +64,7 @@ export default function Home({ title }) {
             iure incidunt, esse earum delectus optio consequuntur assumenda
             voluptates omnis est.
           </p>
-        </Link>
+        </Link> */}
       </main>
 
       {/* <footer className={styles.footer}> */}
@@ -71,11 +80,11 @@ export default function Home({ title }) {
 }
 
 export async function getServerSideProps() {
-  const data = await import("/data/data.json");
-  console.log(data);
+  const { events_categories } = await import("/data/data.json");
+  console.log(events_categories);
   return {
     props: {
-      title: "Hello everyone!",
+      data: events_categories,
     },
   };
 }
