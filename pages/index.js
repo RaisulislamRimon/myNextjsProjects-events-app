@@ -26,7 +26,7 @@ export default function Home({ title }) {
 
       <main className={styles.main}>
         {/* <h1 className="text-3xl font-bold underline">Hello world!</h1> */}
-        <a href="">
+        <Link href="/events/london">
           <img src="" alt="" />
           <h2 className="text-3xl font-bold">Events in London</h2>
           <p>
@@ -35,8 +35,8 @@ export default function Home({ title }) {
             iure incidunt, esse earum delectus optio consequuntur assumenda
             voluptates omnis est.
           </p>
-        </a>
-        <a href="">
+        </Link>
+        <Link href="/events/sanfran">
           <img src="" alt="" />
           <h2 className="text-3xl font-bold">Events in San francisco</h2>
           <p>
@@ -45,8 +45,8 @@ export default function Home({ title }) {
             iure incidunt, esse earum delectus optio consequuntur assumenda
             voluptates omnis est.
           </p>
-        </a>
-        <a href="">
+        </Link>
+        <Link href="/events/barcelona">
           <img src="" alt="" />
           <h2 className="text-3xl font-bold">Events in Barcelona</h2>
           <p>
@@ -55,7 +55,7 @@ export default function Home({ title }) {
             iure incidunt, esse earum delectus optio consequuntur assumenda
             voluptates omnis est.
           </p>
-        </a>
+        </Link>
       </main>
 
       {/* <footer className={styles.footer}> */}
