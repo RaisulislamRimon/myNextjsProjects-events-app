@@ -1,18 +1,30 @@
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import Footer from "../footer";
 import Navbar from "../shared/navbar";
 
-export default function EventsPage() {
+export default function EventsPage({ data }) {
   return (
     <div>
       <Head>
         <title>Events</title>
       </Head>
+
       <Navbar></Navbar>
+
       <h1 className="text-3xl font-bold">Events page</h1>
+
       <div>
-        <Link href="">
+        {data.map((ev) => (
+          <div>
+            <Link href={`events/${ev.id}`}>
+              <Image src={ev.image} alt={ev.title} width={200} height={100} />
+              <h2 className="text-xl font-bold">{ev.title}</h2>
+            </Link>
+          </div>
+        ))}
+        {/* <Link href="">
           <img src="" alt="" />
           <h2 className="text-xl font-bold">Events in London</h2>
         </Link>
@@ -23,9 +35,20 @@ export default function EventsPage() {
         <Link href="">
           <img src="" alt="" />
           <h2 className="text-xl font-bold">Events in Barcelona</h2>
-        </Link>
+        </Link> */}
       </div>
+
       <Footer />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const { events_categories } = await import("/data/data.json");
+  console.log(events_categories);
+  return {
+    props: {
+      data: events_categories,
+    },
+  };
 }
