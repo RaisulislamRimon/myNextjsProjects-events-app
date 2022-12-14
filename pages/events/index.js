@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Footer from "../footer";
 import Navbar from "../shared/navbar";
 
@@ -11,18 +12,18 @@ const Page = () => {
       <Navbar></Navbar>
       <h1 className="text-3xl font-bold">Events page</h1>
       <div>
-        <a href="">
+        <Link href="">
           <img src="" alt="" />
           <h2 className="text-xl font-bold">Events in London</h2>
-        </a>
-        <a href="">
+        </Link>
+        <Link href="">
           <img src="" alt="" />
           <h2 className="text-xl font-bold">Events in San francisco</h2>
-        </a>
-        <a href="">
+        </Link>
+        <Link href="">
           <img src="" alt="" />
           <h2 className="text-xl font-bold">Events in Barcelona</h2>
-        </a>
+        </Link>
       </div>
       <Footer />
     </div>
