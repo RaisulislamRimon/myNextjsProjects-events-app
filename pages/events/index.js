@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Footer from "../footer";
 import Navbar from "../shared/navbar";
 
 const Page = () => {
@@ -23,6 +24,7 @@ const Page = () => {
           <h2 className="text-xl font-bold">Events in Barcelona</h2>
         </a>
       </div>
+      <Footer />
     </div>
   );
 };

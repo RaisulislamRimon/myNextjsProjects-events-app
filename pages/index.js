@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import Footer from "./footer";
 import Navbar from "./shared/navbar";
 
 export default function Home() {
@@ -59,9 +60,10 @@ export default function Home() {
 
       {/* <footer className={styles.footer}> */}
       <footer className="footer footer-center p-4 bg-base-300 text-base-content">
-        <div>
+        {/* <div>
           <p>Copyright © 2022 - All rights reserved by Ltd</p>
-        </div>
+        </div> */}
+        <Footer></Footer>
       </footer>
       {/* </footer> */}
     </div>

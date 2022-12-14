@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Footer from "./footer";
 import Navbar from "./shared/navbar";
 
 const Page = () => {
@@ -7,7 +8,9 @@ const Page = () => {
       <Head>
         <title>About-us</title>
       </Head>
+
       <Navbar />
+
       <h1 className="text-3xl font-bold">About us page</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam odit,
@@ -15,6 +18,8 @@ const Page = () => {
         quae, ut necessitatibus accusamus, beatae non nisi? Ratione excepturi
         fuga similique.
       </p>
+
+      <Footer></Footer>
     </div>
   );
 };
