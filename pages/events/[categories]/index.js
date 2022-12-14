@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-const Page = () => {
+export default function EventsCategoryPage() {
   return (
     <div>
       <Head>
@@ -15,6 +15,4 @@ const Page = () => {
       <a href="/events/event6">event 6</a>
     </div>
   );
-};
-
-export default Page;
+}

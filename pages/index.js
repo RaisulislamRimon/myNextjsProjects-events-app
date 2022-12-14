@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import Footer from "./footer";
 import Navbar from "./shared/navbar";
 
-export default function Home() {
+export default function Home({ title }) {
   return (
     <div className={styles.container}>
       <Head>

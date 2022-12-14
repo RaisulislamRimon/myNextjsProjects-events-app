@@ -2,7 +2,7 @@ import Head from "next/head";
 import Footer from "./footer";
 import Navbar from "./shared/navbar";
 
-const AboutUsPage = () => {
+export default function AboutUsPage() {
   return (
     <div>
       <Head>
@@ -22,9 +22,7 @@ const AboutUsPage = () => {
       <Footer></Footer>
     </div>
   );
-};
-
-export default Page;
+}
 
 // export default function Page() {
 //   return (

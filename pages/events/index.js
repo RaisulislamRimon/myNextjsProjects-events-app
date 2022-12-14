@@ -3,7 +3,7 @@ import Link from "next/link";
 import Footer from "../footer";
 import Navbar from "../shared/navbar";
 
-const EventsPage = () => {
+export default function EventsPage() {
   return (
     <div>
       <Head>
@@ -28,6 +28,4 @@ const EventsPage = () => {
       <Footer />
     </div>
   );
-};
-
-export default Page;
+}

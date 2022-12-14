@@ -2,7 +2,7 @@ import Head from "next/head";
 import Footer from "../footer";
 import Navbar from "../shared/navbar";
 
-const Page = () => {
+export default function Event1() {
   return (
     <div>
       <Head>
@@ -16,6 +16,4 @@ const Page = () => {
       <Footer />
     </div>
   );
-};
-
-export default Page;
+}
