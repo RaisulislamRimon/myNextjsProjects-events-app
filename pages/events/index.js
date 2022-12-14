@@ -3,7 +3,7 @@ import Link from "next/link";
 import Footer from "../footer";
 import Navbar from "../shared/navbar";
 
-const Page = () => {
+const EventsPage = () => {
   return (
     <div>
       <Head>

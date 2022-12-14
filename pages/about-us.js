@@ -2,7 +2,7 @@ import Head from "next/head";
 import Footer from "./footer";
 import Navbar from "./shared/navbar";
 
-const Page = () => {
+const AboutUsPage = () => {
   return (
     <div>
       <Head>
