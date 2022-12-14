@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import Navbar from "./shared/navbar";
 
 export default function Home() {
   return (
@@ -12,12 +14,13 @@ export default function Home() {
       </Head>
 
       <header>
-        <nav>
+        {/* <nav>
           <img src="" alt="" />
-          <a href="/">Home</a>
-          <a href="/events">Events</a>
-          <a href="/about-us">About us</a>
-        </nav>
+          <Link href="/">Home</Link>
+          <Link href="/events">Events</Link>
+          <Link href="/about-us">About us</Link>
+        </nav> */}
+        <Navbar></Navbar>
       </header>
 
       <main className={styles.main}>

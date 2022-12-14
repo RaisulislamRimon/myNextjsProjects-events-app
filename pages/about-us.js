@@ -1,6 +1,13 @@
+import Head from "next/head";
+import Navbar from "./shared/navbar";
+
 const Page = () => {
   return (
     <div>
+      <Head>
+        <title>About-us</title>
+      </Head>
+      <Navbar />
       <h1 className="text-3xl font-bold">About us page</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam odit,
