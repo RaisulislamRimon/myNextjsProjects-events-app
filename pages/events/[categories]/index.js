@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Navbar from "../../shared/navbar";
 
 export default function EventsCategoryPage({ data }) {
   // console.log(data[0].city);
@@ -9,6 +10,7 @@ export default function EventsCategoryPage({ data }) {
       <Head>
         <title>Events</title>
       </Head>
+      <Navbar />
       <h1 className="text-3xl font-bold">events in {data[0].city}</h1>
       {data.map((ev) => (
         <div key={ev.id}>
