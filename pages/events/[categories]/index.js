@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 export default function EventsCategoryPage() {
   return (
@@ -7,7 +8,7 @@ export default function EventsCategoryPage() {
         <title>Events</title>
       </Head>
       <h1 className="text-3xl font-bold">events in london</h1>
-      <a href="/events/event1">event 1</a>
+      <Link href="/events/london/event1">event 1</Link>
       <a href="/events/event2">event 2</a>
       <a href="/events/event3">event 3</a>
       <a href="/events/event4">event 4</a>
