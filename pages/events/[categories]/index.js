@@ -3,15 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../../shared/navbar";
 
-export default function EventsCategoryPage({ data }) {
+export default function EventsCategoryPage({ data, pageName }) {
   // console.log(data[0].city);
   return (
     <div>
       <Head>
-        <title>Events</title>
+        <title>Events in {pageName}</title>
       </Head>
       <Navbar />
-      <h1 className="text-3xl font-bold">events in {data[0].city}</h1>
+      <h1 className="text-3xl font-bold">events in {pageName}</h1>
       {data.map((ev) => (
         <div key={ev.id}>
           <Link href={`/events/${ev.city}/${ev.id}`}>
@@ -59,6 +59,6 @@ export async function getStaticProps(context) {
   const data = allEvents.filter((ev) => ev.city === id);
   console.log(data);
   return {
-    props: { data: data },
+    props: { data: data, pageName: id },
   };
 }
