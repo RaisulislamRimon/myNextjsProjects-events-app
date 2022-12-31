@@ -1,9 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+import HomePage from "../src/components/home/home-page";
 import styles from "../styles/Home.module.css";
-import Footer from "./footer";
-import Navbar from "./shared/navbar";
+import Header from "../src/components/header/header";
+import Footer from "../src/components/footer/footer";
 
 export default function Home({ data }) {
   return (
@@ -14,74 +13,18 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header>
-        {/* <nav>
-          <img src="" alt="" />
-          <Link href="/">Home</Link>
-          <Link href="/events">Events</Link>
-          <Link href="/about-us">About us</Link>
-        </nav> */}
-        <Navbar></Navbar>
-      </header>
+      <Header />
 
-      <main className={styles.main}>
-        {data.map((ev) => (
-          <div key={ev.id}>
-            <Link href={`/events/${ev.id}`}>
-              <Image src={ev.image} alt={ev.title} width={200} height={100} />
-              <h2 className="text-3xl font-bold">{ev.title}</h2>
-              <p>{ev.description}</p>
-            </Link>
-          </div>
-        ))}
-        {/* <h1 className="text-3xl font-bold underline">Hello world!</h1> */}
-        {/* <Link href="/events/london">
-          <img src="" alt="" />
-          <h2 className="text-3xl font-bold">Events in London</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores,
-            eius distinctio odio amet sequi excepturi dicta nemo, cum dolorem
-            iure incidunt, esse earum delectus optio consequuntur assumenda
-            voluptates omnis est.
-          </p>
-        </Link>
-        <Link href="/events/sanfran">
-          <img src="" alt="" />
-          <h2 className="text-3xl font-bold">Events in San francisco</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores,
-            eius distinctio odio amet sequi excepturi dicta nemo, cum dolorem
-            iure incidunt, esse earum delectus optio consequuntur assumenda
-            voluptates omnis est.
-          </p>
-        </Link>
-        <Link href="/events/barcelona">
-          <img src="" alt="" />
-          <h2 className="text-3xl font-bold">Events in Barcelona</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores,
-            eius distinctio odio amet sequi excepturi dicta nemo, cum dolorem
-            iure incidunt, esse earum delectus optio consequuntur assumenda
-            voluptates omnis est.
-          </p>
-        </Link> */}
-      </main>
+      <HomePage data={data} />
 
-      {/* <footer className={styles.footer}> */}
-      <footer className="footer footer-center p-4 bg-base-300 text-base-content">
-        {/* <div>
-          <p>Copyright © 2022 - All rights reserved by Ltd</p>
-        </div> */}
-        <Footer></Footer>
-      </footer>
-      {/* </footer> */}
+      <Footer />
     </div>
   );
 }
 
 export async function getServerSideProps() {
   const { events_categories } = await import("/data/data.json");
-  console.log(events_categories);
+  // console.log(events_categories);
   return {
     props: {
       data: events_categories,

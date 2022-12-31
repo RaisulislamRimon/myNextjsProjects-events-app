@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "../footer";
-import Navbar from "../shared/navbar";
+import Footer from "../../src/components/footer/footer";
+import Header from "../../src/components/header/header";
 
 export default function EventsPage({ data }) {
   return (
@@ -11,7 +11,7 @@ export default function EventsPage({ data }) {
         <title>Events</title>
       </Head>
 
-      <Navbar></Navbar>
+      <Header></Header>
 
       <h1 className="text-3xl font-bold">Events page</h1>
 
@@ -37,7 +37,6 @@ export default function EventsPage({ data }) {
           <h2 className="text-xl font-bold">Events in Barcelona</h2>
         </Link> */}
       </div>
-
       <Footer />
     </div>
   );
@@ -45,7 +44,7 @@ export default function EventsPage({ data }) {
 
 export async function getStaticProps() {
   const { events_categories } = await import("/data/data.json");
-  console.log(events_categories);
+  // console.log(events_categories);
   return {
     props: {
       data: events_categories,

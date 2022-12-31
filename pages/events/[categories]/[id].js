@@ -1,11 +1,12 @@
 import Image from "next/image";
-import Navbar from "../../shared/navbar";
+import Footer from "../../../src/components/footer/footer";
+import Header from "../../../src/components/header/header";
 
 export default function EventPage({ data }) {
-  console.log(data);
+  // console.log(data);
   return (
     <div>
-      <Navbar />
+      <Header />
       <h1 className="text-3xl font-bold">Our single event page</h1>
       <div>
         <Image src={data.image} width={500} height={300} alt={data.title} />
@@ -16,6 +17,7 @@ export default function EventPage({ data }) {
           {data.description} - {data.date}
         </p>
       </div>
+      <Footer />
     </div>
   );
 }
@@ -38,12 +40,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  console.log(context);
+  // console.log(context);
   const id = context?.params?.id;
   const data = await import("/data/data.json");
   const { allEvents } = data;
   const eventData = allEvents.find((ev) => ev.id === id);
-  console.log(eventData);
+  // console.log(eventData);
   return {
     props: {
       data: eventData,

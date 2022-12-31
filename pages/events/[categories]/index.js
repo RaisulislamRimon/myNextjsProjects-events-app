@@ -1,16 +1,21 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "../../shared/navbar";
+import Footer from "../../../src/components/footer/footer";
+import Header from "../../../src/components/header/header";
 
 export default function EventsCategoryPage({ data, pageName }) {
-  // console.log(data[0].city);
+  // console.log(data[0]?.city);
+  // console.log(`pageName : ${pageName}`);
+  // console.log(`data : ${data}`);
   return (
     <div>
       <Head>
-        <title>Events in {pageName}</title>
+        {/* <title>Events in {pageName}</title> */}
+        {/* <title>Events in {data[0]?.city}</title> */}
+        <title>Events</title>
       </Head>
-      <Navbar />
+      <Header />
       <h1 className="text-3xl font-bold">events in {pageName}</h1>
       {data.map((ev) => (
         <div key={ev.id}>
@@ -31,6 +36,7 @@ export default function EventsCategoryPage({ data, pageName }) {
       <a href="/events/event4">event 4</a>
       <a href="/events/event5">event 5</a>
       <a href="/events/event6">event 6</a> */}
+      <Footer />
     </div>
   );
 }
@@ -52,12 +58,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  console.log(context);
+  // console.log(context);
   const id = context?.params?.categories;
-  console.log(id);
+  // console.log(id);
   const { allEvents } = await import("/data/data.json");
   const data = allEvents.filter((ev) => ev.city === id);
-  console.log(data);
+  // console.log(data);
   return {
     props: { data: data, pageName: id },
   };
