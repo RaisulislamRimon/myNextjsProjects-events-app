@@ -14,8 +14,11 @@ const SingleEvent = ({ data }) => {
           {data.description} - {data.date}
         </p>
 
+        <label htmlFor="getRegistered">Get Registered for this event</label>
+        <br />
         <input
           type="email"
+          id="getRegistered"
           style={{
             backgroundColor: "white",
             padding: "10px 15px",
