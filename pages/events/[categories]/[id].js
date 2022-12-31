@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import SingleEvent from "../../../src/components/events/single-event";
 
 export default function EventPage({ data }) {
   // console.log(data);
@@ -9,16 +10,7 @@ export default function EventPage({ data }) {
         <title>Event</title>
       </Head>
 
-      <h1 className="text-3xl font-bold">Our single event page</h1>
-      <div>
-        <Image src={data.image} width={500} height={300} alt={data.title} />
-        <h1>
-          {data.title} - {data.city}
-        </h1>
-        <p>
-          {data.description} - {data.date}
-        </p>
-      </div>
+      <SingleEvent data={data} />
     </div>
   );
 }

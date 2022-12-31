@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import CategoryEvent from "../../../src/components/events/categoryEvent";
 
 export default function EventsCategoryPage({ data, pageName }) {
   // console.log(data[0]?.city);
@@ -14,17 +15,7 @@ export default function EventsCategoryPage({ data, pageName }) {
         <title>Events</title>
       </Head>
 
-      <h1 className="text-3xl font-bold">events in {pageName}</h1>
-      {data.map((ev) => (
-        <div key={ev.id}>
-          <Link href={`/events/${ev.city}/${ev.id}`}>
-            {/* <img src="" alt="" /> */}
-            <Image src={ev.image} width={300} height={300} alt={ev.title} />
-            <h2>{ev.title}</h2>
-            <p>{ev.description}</p>
-          </Link>
-        </div>
-      ))}
+      <CategoryEvent data={data} pageName={pageName} />
     </div>
   );
 }
