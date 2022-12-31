@@ -1,8 +1,6 @@
 import Head from "next/head";
 import HomePage from "../src/components/home/home-page";
 import styles from "../styles/Home.module.css";
-import Header from "../src/components/header/header";
-import Footer from "../src/components/footer/footer";
 
 export default function Home({ data }) {
   return (
@@ -13,11 +11,7 @@ export default function Home({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
-
       <HomePage data={data} />
-
-      <Footer />
     </div>
   );
 }

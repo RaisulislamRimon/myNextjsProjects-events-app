@@ -1,8 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "../../src/components/footer/footer";
-import Header from "../../src/components/header/header";
 
 export default function EventsPage({ data }) {
   return (
@@ -10,8 +8,6 @@ export default function EventsPage({ data }) {
       <Head>
         <title>Events</title>
       </Head>
-
-      <Header></Header>
 
       <h1 className="text-3xl font-bold">Events page</h1>
 
@@ -24,20 +20,7 @@ export default function EventsPage({ data }) {
             </Link>
           </div>
         ))}
-        {/* <Link href="">
-          <img src="" alt="" />
-          <h2 className="text-xl font-bold">Events in London</h2>
-        </Link>
-        <Link href="">
-          <img src="" alt="" />
-          <h2 className="text-xl font-bold">Events in San francisco</h2>
-        </Link>
-        <Link href="">
-          <img src="" alt="" />
-          <h2 className="text-xl font-bold">Events in Barcelona</h2>
-        </Link> */}
       </div>
-      <Footer />
     </div>
   );
 }

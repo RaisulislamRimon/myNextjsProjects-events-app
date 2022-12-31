@@ -1,12 +1,9 @@
 import Image from "next/image";
-import Footer from "../../../src/components/footer/footer";
-import Header from "../../../src/components/header/header";
 
 export default function EventPage({ data }) {
   // console.log(data);
   return (
     <div>
-      <Header />
       <h1 className="text-3xl font-bold">Our single event page</h1>
       <div>
         <Image src={data.image} width={500} height={300} alt={data.title} />
@@ -17,7 +14,6 @@ export default function EventPage({ data }) {
           {data.description} - {data.date}
         </p>
       </div>
-      <Footer />
     </div>
   );
 }

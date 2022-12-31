@@ -1,8 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "../../../src/components/footer/footer";
-import Header from "../../../src/components/header/header";
 
 export default function EventsCategoryPage({ data, pageName }) {
   // console.log(data[0]?.city);
@@ -15,7 +13,7 @@ export default function EventsCategoryPage({ data, pageName }) {
         {/* <title>Events in {data[0]?.city}</title> */}
         <title>Events</title>
       </Head>
-      <Header />
+
       <h1 className="text-3xl font-bold">events in {pageName}</h1>
       {data.map((ev) => (
         <div key={ev.id}>
@@ -27,16 +25,6 @@ export default function EventsCategoryPage({ data, pageName }) {
           </Link>
         </div>
       ))}
-      {/* <Link href="/events/london/event1">
-        <img src="" alt="" />
-        <h2>event 1</h2>
-      </Link>
-      <a href="/events/event2">event 2</a>
-      <a href="/events/event3">event 3</a>
-      <a href="/events/event4">event 4</a>
-      <a href="/events/event5">event 5</a>
-      <a href="/events/event6">event 6</a> */}
-      <Footer />
     </div>
   );
 }

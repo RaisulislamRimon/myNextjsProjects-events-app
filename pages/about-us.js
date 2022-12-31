@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Footer from "../src/components/footer/footer";
-import Header from "../src/components/header/header";
 
 export default function AboutUsPage() {
   return (
@@ -9,8 +7,6 @@ export default function AboutUsPage() {
         <title>About-us</title>
       </Head>
 
-      <Header />
-
       <h1 className="text-3xl font-bold">About us page</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam odit,
@@ -18,8 +14,6 @@ export default function AboutUsPage() {
         quae, ut necessitatibus accusamus, beatae non nisi? Ratione excepturi
         fuga similique.
       </p>
-
-      <Footer></Footer>
     </div>
   );
 }
