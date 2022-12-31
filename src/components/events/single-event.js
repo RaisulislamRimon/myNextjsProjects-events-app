@@ -14,8 +14,27 @@ const SingleEvent = ({ data }) => {
           {data.description} - {data.date}
         </p>
 
-        <input type="email" />
-        <button>Submit</button>
+        <input
+          type="email"
+          style={{
+            backgroundColor: "white",
+            padding: "10px 15px",
+            color: "white",
+            borderRadius: "5px 0 0 5px",
+            border: "1px solid tomato",
+          }}
+        />
+        <button
+          style={{
+            backgroundColor: "orange",
+            padding: "10px 15px",
+            color: "white",
+            borderRadius: " 0 5px 5px 0",
+            border: "1px solid orange",
+          }}
+        >
+          Submit
+        </button>
       </div>
     </div>
   );
