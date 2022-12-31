@@ -1,9 +1,14 @@
+import Head from "next/head";
 import Image from "next/image";
 
 export default function EventPage({ data }) {
   // console.log(data);
   return (
     <div>
+      <Head>
+        <title>Event</title>
+      </Head>
+
       <h1 className="text-3xl font-bold">Our single event page</h1>
       <div>
         <Image src={data.image} width={500} height={300} alt={data.title} />
